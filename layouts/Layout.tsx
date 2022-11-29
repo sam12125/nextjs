@@ -6,15 +6,15 @@ import { useRouter } from 'next/router';
 const Layout = (props) => {
   const router = useRouter()
 
-  const logout = async () => {
-    await fetch('http://localhost:8000/api/logout', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        credentials: 'include',
-    })
+  // const logout = async () => {
+  //   await fetch('http://localhost:8000/api/logout', {
+  //       method: 'POST',
+  //       headers: {'Content-Type': 'application/json'},
+  //       credentials: 'include',
+  //   })
 
-    await router.push('/login');
-}
+  //   await router.push('/login');
+  // }
 
   let menu
 
@@ -64,6 +64,6 @@ const Layout = (props) => {
     </main>
         </>
       );
-};
+    }
 
 export default Layout;

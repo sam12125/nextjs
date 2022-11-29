@@ -8,24 +8,24 @@ const register = () => {
   const [password, setPassword] = useState("");
   const router = useRouter()
 
-  // let userDetails = JSON.parse(localStorage.getItem('user')) || []
+  let userDetails = JSON.parse(localStorage.getItem('user')) || []
 
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault();
 
-    // userDetails.push({"Name":name,"Email":email,"Password":password})
-    // console.log(userDetails)
-    // localStorage.setItem("user",JSON.stringify(userDetails))
+    userDetails.push({"Name":name,"Email":email,"Password":password})
+    console.log(userDetails)
+    localStorage.setItem("user",JSON.stringify(userDetails))
 
-    await fetch("http://localhost:8000/api/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        name,
-        email,
-        password,
-      }),
-    });
+    // await fetch("http://localhost:8000/api/register", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     name,
+    //     email,
+    //     password,
+    //   }),
+    // });
 
     await router.push('/login')
   };

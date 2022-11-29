@@ -11,15 +11,15 @@ const login = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await fetch('http://localhost:8000/api/login', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            credentials: 'include',
-            body: JSON.stringify({
-                email,
-                password
-            })
-        });
+        // await fetch('http://localhost:8000/api/login', {
+        //     method: 'POST',
+        //     headers: {'Content-Type': 'application/json'},
+        //     credentials: 'include',
+        //     body: JSON.stringify({
+        //         email,
+        //         password
+        //     })
+        // });
 
         await router.push('/');
     }
